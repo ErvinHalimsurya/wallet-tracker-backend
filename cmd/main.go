@@ -1,15 +1,18 @@
 package main
 
 import (
-	"net/http"
+	"wallet-tracker-backend/config"
+	"wallet-tracker-backend/routes"
 
 	"github.com/labstack/echo/v4"
 )
 
 func main() {
+	config.Init()
+
 	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
-	})
+
+	routes.InitiateRoutes(e)
+
 	e.Logger.Fatal(e.Start(":1323"))
 }
