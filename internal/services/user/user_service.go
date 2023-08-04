@@ -1,17 +1,17 @@
-package service
+package user_service
 
-import r "wallet-tracker-backend/internal/modules/user/repository"
+import user_repository "wallet-tracker-backend/internal/repositories/user"
 
 type UserService interface {
 	GetUser() string
 }
 
 type userService struct {
-	userRepository r.UserRepository
+	userRepository user_repository.UserRepository
 }
 
 type UserServiceConfig struct {
-	UserRepository r.UserRepository
+	UserRepository user_repository.UserRepository
 }
 
 func NewUserService(usc *UserServiceConfig) UserService {
