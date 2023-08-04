@@ -44,7 +44,6 @@ func Init() {
 		log.Println("[Config][initConfig] Error reading config file: ", err)
 		os.Exit(1)
 	}
-
 }
 
 func GetDSN() string {

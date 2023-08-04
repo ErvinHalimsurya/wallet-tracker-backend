@@ -14,22 +14,12 @@ type RepositoriesConfig struct {
 	UserRepository ur.UserRepository
 }
 
-// func New(hc *RepositoriesConfig) *Repositories {
-// 	return &Repositories{
-// 		UserRepository: hc.UserRepository,
-// 	}
-// }
-
 func InitRepositories() *Repositories {
 	userRepository := ur.NewUserRepository(
 		&ur.UserRepositoryConfig{
 			DB: &gorm.DB{},
 		},
 	)
-
-	// r := New(&RepositoriesConfig{
-	// 	UserRepository: userRepository,
-	// })
 
 	r := &Repositories{
 		UserRepository: userRepository,

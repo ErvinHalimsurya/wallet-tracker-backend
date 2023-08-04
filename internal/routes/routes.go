@@ -8,7 +8,6 @@ import (
 )
 
 func InitiateRoutes(e *echo.Echo, h *handlers.Handlers) {
-
 	e.GET("/", hello)
 	e.GET("/ecample/:id", example)
 	e.GET("/user", h.UserHandler.GetUser)

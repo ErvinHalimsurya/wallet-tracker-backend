@@ -1,4 +1,4 @@
-package user_handler
+package user
 
 import (
 	"net/http"
@@ -7,6 +7,5 @@ import (
 )
 
 func (uh *userHandler) GetUser(c echo.Context) error {
-
 	return c.String(http.StatusOK, uh.userService.GetUser())
 }

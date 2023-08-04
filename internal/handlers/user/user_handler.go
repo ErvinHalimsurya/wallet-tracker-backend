@@ -1,7 +1,7 @@
-package user_handler
+package user
 
 import (
-	user_service "wallet-tracker-backend/internal/services/user"
+	userService "wallet-tracker-backend/internal/services/user"
 
 	"github.com/labstack/echo/v4"
 )
@@ -11,11 +11,11 @@ type UserHandler interface {
 }
 
 type userHandler struct {
-	userService user_service.UserService
+	userService userService.UserService
 }
 
 type UserHandlerConfig struct {
-	UserService user_service.UserService
+	UserService userService.UserService
 }
 
 func NewUserHandler(uhc *UserHandlerConfig) UserHandler {

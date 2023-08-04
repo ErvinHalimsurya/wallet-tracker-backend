@@ -1,4 +1,4 @@
-package user_repository
+package user
 
 func (ur *userRepository) GetUser() string {
 	return "example user"
